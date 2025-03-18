@@ -1,14 +1,15 @@
 const express = require('express');
 const app = express();
-const path = require('path');
+const cookieParser = require('cookie-parser');
 
-app.use(express.static('public'))
+app.use(cookieParser());
+app.use(express.json());
 
 app.get('/', (req, res) => {
-    console.log(res);
+    console.log("Cookies: ", req.cookies);
 
-    res.json({ data: "" })
-})
+    res.json({ cookies: req.cookies });
+});
 
 app.listen(process.env.PORT || 8080);
 
