@@ -5,9 +5,11 @@ const path = require('path');
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
-    res.sendFile('index.html', {root: path.join(__dirname, 'public')});
+    console.log(res);
+
+    res.json({ data: "" })
 })
 
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 8080);
 
 module.exports = app;
