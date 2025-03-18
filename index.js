@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
     res.json({ cookies: req.cookies });
 });
 
-app.post("", (req, res) => {
+app.post("/", (req, res) => {
     res.json({ data: req })
 })
 
